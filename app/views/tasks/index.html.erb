@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <h1>List of tasks</h1>
+
+  <% @tasks.each do |task| %>
+  <ul>
+    <li>
+    <% if task.completed %>
+      <i class="fa-regular fa-square-check"></i>
+    <% else %>
+      <i class="fa-regular fa-square"></i>
+    <% end %>
+    <%= link_to task.title, task_path(task) %>
+    </li>
+  </ul>
+  <% end %>
+</div>
+
+<hr>
+<div class="container mt-3">
+
+  <%= link_to new_task_path do%>
+    <i class="fa-solid fa-circle-plus"></i> Add new task
+  <% end %>
+</div>
